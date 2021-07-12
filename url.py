@@ -24,9 +24,9 @@ def crawler():
             requests.packages.urllib3.disable_warnings()
             content = requests.get(url, verify=False, allow_redirects=True, timeout=10)
             if content.status_code == 200:
-                print (url)
+                print (url,"alive")
         except requests.RequestException as e:
-            pass
+            print (url,"broken")
 
 if __name__ == '__main__':
     for i in range(threading_num):
